@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
+    <style>
+      @-ms-viewport { width: device-width; zoom: 1.0; }
+      @-o-viewport { width: device-width; zoom: 1.0; }
+      @viewport { width: device-width; zoom: 1.0; }
+    </style>
+
+    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+
+</head>
+<body>
+    {{ content }}
+</body>
+</html>
